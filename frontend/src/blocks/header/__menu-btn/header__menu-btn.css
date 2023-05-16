@@ -1,0 +1,18 @@
+.header__menu-btn {
+    border: none;
+    background-color: #000000;
+    padding: 0;
+}
+
+@media screen and (max-width: 400px) {
+    .header__menu-btn {
+        width: 24px;
+        height: 24px;
+        display: grid;
+        gap: 6px;
+    }
+    .header__menu-btn:hover {
+        opacity: 60%;
+        cursor: pointer;
+    }
+}

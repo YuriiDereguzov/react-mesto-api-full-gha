@@ -21,7 +21,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "scp -r ./build/* praktikum@158.160.1.70:/home/praktikum/front"
   },
   "eslintConfig": {
     "extends": [

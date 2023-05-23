@@ -39,7 +39,7 @@ function App() {
       Promise.all([api.getProfile(), api.getInitialCards()])
         .then(([userData, cardList]) => {
           setCurrentUser(userData);
-          setCards(cardList);
+          setCards(cardList.reverse());
         })
         .catch((err) => {
           console.log(`Ошибка: ${err}`); // выведем ошибку в консоль
@@ -53,7 +53,7 @@ function App() {
     if (jwt) {
       Auth.getContent(jwt).then((res) => {
         setLoggedIn(true);
-        setUserEmail(res.data.email);
+        setUserEmail(res.email);
         navigate("/");
       });
     }
@@ -114,7 +114,7 @@ function App() {
 
   function handleCardLike(card) {
     // Снова проверяем, есть ли уже лайк на этой карточке
-    const isLiked = card.likes.some((i) => i._id === currentUser._id);
+    const isLiked = card.likes.some((id) => id === currentUser._id);
 
     // Отправляем запрос в API и получаем обновлённые данные карточки
     api

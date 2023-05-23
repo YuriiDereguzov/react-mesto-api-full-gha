@@ -1,4 +1,5 @@
-export const BASE_URL = "https://auth.nomoreparties.co";
+// export const BASE_URL = "https://auth.nomoreparties.co";
+export const BASE_URL = "http://localhost:3000";
 
 const getResponse = (res) => {
   return res.ok ? res.json() : Promise.reject(`Ошибка: ${res.status}`);
@@ -26,7 +27,8 @@ export const authorize = (password, email) => {
   }).then(getResponse);
 };
 
-export const getContent = (token) => {
+export const getContent = () => {
+  const token = localStorage.getItem('jwt');
   return fetch(`${BASE_URL}/users/me`, {
     method: "GET",
     headers: {

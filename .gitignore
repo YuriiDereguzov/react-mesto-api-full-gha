@@ -36,6 +36,7 @@ npm-debug.log*
 node_modules
 
 # Environment variables
+.env
 
 # Optional npm cache directory
 .npm

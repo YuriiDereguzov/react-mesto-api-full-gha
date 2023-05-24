@@ -126,7 +126,8 @@ class Api {
 }
 
 export const api = new Api({
-  baseUrl: "http://localhost:3000",
+  baseUrl: "https://api.projects.nomoredomains.monster",
+  // baseUrl: "http://localhost:3000",
   // baseUrl: "https://mesto.nomoreparties.co/v1/cohort-54",
   // headers: {
   //   authorization: "b09e5145-4d0e-4084-8037-03c111312ec0",

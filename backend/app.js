@@ -1,11 +1,9 @@
-require('dotenv').config();
 // const path = require('path');
 // const bodyParser = require('body-parser');
 const express = require('express');
 const mongoose = require('mongoose');
 const { errors } = require('celebrate');
 const cors = require('cors');
-const DB_ADDRESS = require('./config');
 const routes = require('./routes');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 // Слушаем 3000 порт
@@ -16,19 +14,12 @@ const app = express();
 app.use(cors());
 
 // подключаемся к серверу mongo
-mongoose.connect(DB_ADDRESS, {});
+mongoose.connect('mongodb://127.0.0.1:27017/mestodb', {});
 // app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(requestLogger); // подключаем логгер запросов
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
-app.get('/crash-test', () => {
-  setTimeout(() => {
-    throw new Error('Сервер сейчас упадёт');
-  }, 0);
-});
-
 app.use(routes);
 app.use(errorLogger); // подключаем логгер ошибок
 app.use(errors());

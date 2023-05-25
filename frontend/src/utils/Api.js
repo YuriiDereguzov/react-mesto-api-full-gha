@@ -1,7 +1,6 @@
 class Api {
   constructor({ baseUrl, headers }) {
     // тело конструктора
-    // this._headers = headers;
     this._baseUrl = baseUrl;
   }
 
@@ -16,7 +15,6 @@ class Api {
     const token = localStorage.getItem('jwt');
 
     return fetch(`${this._baseUrl}/users/me`, {
-      // headers: this._headers,
       headers: {
         authorization: `Bearer ${token}`,
       },
@@ -27,7 +25,6 @@ class Api {
     const token = localStorage.getItem('jwt');
 
     return fetch(`${this._baseUrl}/cards`, {
-      // headers: this._headers,
       headers: {
         authorization: `Bearer ${token}`,
       },
@@ -40,7 +37,6 @@ class Api {
 
     return fetch(`${this._baseUrl}/users/me`, {
       method: "PATCH",
-      // headers: this._headers,
       headers: {
         authorization: `Bearer ${token}`,
         "Content-Type": "application/json"
@@ -57,7 +53,6 @@ class Api {
 
     return fetch(`${this._baseUrl}/cards`, {
       method: "POST",
-      // headers: this._headers,
       headers: {
         authorization: `Bearer ${token}`,
         "Content-Type": "application/json"
@@ -74,7 +69,6 @@ class Api {
 
     return fetch(`${this._baseUrl}/cards/${id}`, {
       method: "DELETE",
-      // headers: this._headers,
       headers: {
         authorization: `Bearer ${token}`,
       },
@@ -86,7 +80,6 @@ class Api {
 
     return fetch(`${this._baseUrl}/users/me/avatar`, {
       method: "PATCH",
-      // headers: this._headers,
       headers: {
         authorization: `Bearer ${token}`,
         "Content-Type": "application/json"
@@ -102,7 +95,6 @@ class Api {
 
     return fetch(`${this._baseUrl}/cards/${id}/likes`, {
       method: isLiked ? "DELETE" : "PUT",
-      // headers: this._headers,
       headers: {
         authorization: `Bearer ${token}`,
         "Content-Type": "application/json"
@@ -127,10 +119,4 @@ class Api {
 
 export const api = new Api({
   baseUrl: "https://api.projects.nomoredomains.monster",
-  // baseUrl: "http://localhost:3000",
-  // baseUrl: "https://mesto.nomoreparties.co/v1/cohort-54",
-  // headers: {
-  //   authorization: "b09e5145-4d0e-4084-8037-03c111312ec0",
-  //   "Content-Type": "application/json",
-  // },
 });

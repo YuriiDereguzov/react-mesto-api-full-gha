@@ -7,7 +7,6 @@ const ForbiddenError = require('../middlewares/errors/forbidden-err');
 // GET /cards — возвращает все карточки
 const getCards = (req, res, next) => {
   Card.find({})
-    // .populate(['owner', 'likes'])
     .then((cards) => res.send(cards))
     .catch(next);
 };
@@ -15,9 +14,7 @@ const getCards = (req, res, next) => {
 // DELETE /cards/:cardId — удаляет карточку по идентификатору
 const deleteCard = (req, res, next) => {
   Card.findById(req.params.cardId)
-    // .populate(['owner', 'likes'])
     .orFail(() => next(new NotFoundError(`Карточка с _id ${req.params.cardId} не найдена`)))
-    // .populate('owner')
     .then((card) => {
       if (card.owner._id.toString() === req.user._id) {
         return Card.deleteOne(card)
@@ -58,7 +55,6 @@ const likeCard = (req, res, next) => {
     { $addToSet: { likes: req.user._id } },
     { new: true },
   )
-    // .populate(['owner', 'likes'])
     .then((card) => {
       if (card) {
         res.send(card);
@@ -82,7 +78,6 @@ const dislikeCard = (req, res, next) => {
     { $pull: { likes: req.user._id } },
     { new: true },
   )
-    // .populate(['owner', 'likes'])
     .then((card) => {
       if (card) {
         res.send(card);

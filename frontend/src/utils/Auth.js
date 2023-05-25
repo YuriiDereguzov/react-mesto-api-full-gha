@@ -1,5 +1,3 @@
-// export const BASE_URL = "https://auth.nomoreparties.co";
-// export const BASE_URL = "http://localhost:3000";
 export const BASE_URL = "https://api.projects.nomoredomains.monster";
 
 const getResponse = (res) => {

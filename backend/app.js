@@ -1,5 +1,3 @@
-// const path = require('path');
-// const bodyParser = require('body-parser');
 const express = require('express');
 const mongoose = require('mongoose');
 const { errors } = require('celebrate');
@@ -15,7 +13,6 @@ app.use(cors());
 
 // подключаемся к серверу mongo
 mongoose.connect('mongodb://127.0.0.1:27017/mestodb', {});
-// app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(requestLogger); // подключаем логгер запросов
 app.use(express.json());

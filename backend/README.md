@@ -3,7 +3,6 @@
 
 # ссылки на проект
 [GitHub] — https://github.com/YuriiDereguzov/express-mesto-gha
-[Deploy] —
 
 ## Директории
 

@@ -9,10 +9,14 @@
 
 IP-адрес 158.160.1.70
 
-Frontend
+Frontend https://projects.nomoredomains.monster
+
 [GitHub] — https://github.com/YuriiDereguzov/react-mesto-auth
+
 [Deploy] — https://projects.nomoredomains.monster
 
-Backend
+Backend https://api.projects.nomoredomains.monster
+
 [GitHub] — https://github.com/YuriiDereguzov/express-mesto-gha
+
 [Deploy] — https://api.projects.nomoredomains.monster

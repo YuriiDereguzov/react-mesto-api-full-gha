@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { celebrate, Joi } = require('celebrate');
+const valideExpression = require('../utils/constants');
 const {
   getUsers,
   getUser,
@@ -23,7 +24,7 @@ router.patch('/me', celebrate({
 }), updateUserProfile);
 router.patch('/me/avatar', celebrate({
   body: Joi.object().keys({
-    avatar: Joi.string().required().pattern(/(https?:\/\/)(w{3}\.)?(([a-zA-Z0-9]+).)+/),
+    avatar: Joi.string().required().pattern(valideExpression),
   }),
 }), updateUserAvatar);
 

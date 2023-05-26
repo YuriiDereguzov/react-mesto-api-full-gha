@@ -17,7 +17,7 @@ const deleteCard = (req, res, next) => {
     .orFail(() => next(new NotFoundError(`Карточка с _id ${req.params.cardId} не найдена`)))
     .then((card) => {
       if (card.owner._id.toString() === req.user._id) {
-        return Card.deleteOne
+        return Card.deleteOne(card)
           .then(() => res.send({ data: card, message: 'Карточка успешно удалена' }));
       }
       // пользователь не может удалить карточку, которую он не создавал

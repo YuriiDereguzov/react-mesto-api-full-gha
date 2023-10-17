@@ -62,3 +62,7 @@ Backend
   </li>
   <li>ESlint <img style="width: 3%" src="https://github.com/github/explore/blob/main/topics/eslint/eslint.png" alt="ESlint"></li>
 </ul>
+
+## Статус проекта:
+
+Завершен.

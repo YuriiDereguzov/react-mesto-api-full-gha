@@ -15,7 +15,7 @@ Frontend
 
 [GitHub] — https://github.com/YuriiDereguzov/react-mesto-auth
 
-[Deploy] — https://projects.nomoredomains.monster
+[Deploy] — https://projects.nomoredomains.monster (залит на Yandex Cloud. ВМ временно остновлена)
 
 Backend
 
